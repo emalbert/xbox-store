@@ -1,0 +1,32 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-expand-lg {
+    background-color: #107C10 !important;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-right: 16px;
+}
+
+.nav-link:hover {
+    color:rgb(170, 168, 168) !important;
+}
+
+.navbar-toggler {
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+
+    .navbar-collapse {
+        justify-content: flex-end !important;
+    }
+    
+}
