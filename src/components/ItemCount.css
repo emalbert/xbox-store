@@ -1,0 +1,18 @@
+.btn-contador, .display-contador {
+    display: inline;
+}
+
+.btn-contador {
+    color: #fff;
+    background-color: #107C10;
+    padding: 8px 32px 8px 32px;
+    border:1px solid lightgreen;
+    border-radius: 0px;
+    margin: 8px;
+}
+.display-contador {
+    padding: 8px 40px 8px 40px;
+    margin: 16px;
+    background-color: lightgrey;
+    border: 1px solid gray;
+}
