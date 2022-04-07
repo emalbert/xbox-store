@@ -1,0 +1,15 @@
+.btn-principal {
+    background-color: green;
+    border:0;
+}
+
+.item-card {
+    margin: 40px;
+    width: 350px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightslategray;
+}
+
+.item-card button {
+    margin-top: 32px;
+}

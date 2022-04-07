@@ -21,9 +21,11 @@ const ItemCount = (props) => {
 
     return (
         <>
-            <button className="btn-contador" onClick={decrement}>-</button>
-            <p className="display-contador"> {contador} </p>
-            <button className="btn-contador" onClick={increment}>+</button>
+            <div>
+                <button className="btn-contador" onClick={decrement}>-</button>
+                <p className="display-contador"> {contador} </p>
+                <button className="btn-contador" onClick={increment}>+</button>
+            </div>
         </>
     );
   }
