@@ -50,13 +50,11 @@ const products = [
 ];
 
 export const getProducts = () => {
-    let datos;
-    //console.log(datos);
-    let p = new Promise((resolve, reject) => setTimeout(() => resolve(products), 2000));
-    p.then(datos = products);
-    //console.log(datos);
-    return datos;
+   return new Promise((resolve, reject) => {
+    setTimeout( () => {
+        return resolve(products)
+    }
+    , 2000);
+    });
 }
-    // let datos = products;
-    // return datos;
 

@@ -1,4 +1,4 @@
-import './item.css';
+import './Item.css';
 import {Card, Button} from 'react-bootstrap';
 import ItemCount from './ItemCount';
 

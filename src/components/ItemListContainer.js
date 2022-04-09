@@ -1,19 +1,21 @@
 import './ItemListContainer.css';
 import ItemList from './ItemList';
 import { getProducts } from './Products';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     
     const [productos,setProductos] = useState([]);
 
+    useEffect ( ()=> {
     async function fetchData() {
         let data = await getProducts();
         console.log(data);
         setProductos(data);
     }
     fetchData();
-    // getProducts();
+    },[]
+    )
 
     return (
         <>
