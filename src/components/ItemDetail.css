@@ -1,0 +1,31 @@
+.titulo-principal {
+    margin-top: 40px;
+}
+
+.imagen-principal {
+    height: 600px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.item-descripcion {
+    font-size: 20px;
+}
+
+.item-precio {
+    font-size: 2rem;
+}
+
+.item-stock {
+    font-size: 1.3rem;
+}
+
+.item-precio, .item-stock {
+    font-weight: 600;
+}
+
+.item-contador {
+    margin-bottom: 40px;
+}
