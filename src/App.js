@@ -1,18 +1,10 @@
 import './App.css';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <>
-      <header>
-        <NavBar />
-      </header>
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer />
-
-    </>
-  );
+    <Home />
+  )
 }
 
 export default App;

@@ -1,30 +1,43 @@
 import './NavBar.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-            <a className="navbar-brand" href="#">Xbox Store Argentina</a>
-            
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-                    <a className="nav-link" href="#">Xbox Game Pass</a>
-                    <a className="nav-link" href="#">Juegos</a>
-                    <a className="nav-link" href="#">Preguntas Frecuentes</a>
-                    <CartWidget />
-                </div>
-            </div>
+        <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Brand><Link className="navbar-brand" to='/'>Xbox Store Argentina</Link></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link><Link className="nav-link" to='/'>Inicio</Link></Nav.Link>
+                        <Nav.Link><Link className="nav-link" to='/gamepass'>Game Pass</Link></Nav.Link>
+                        <NavDropdown className="nav-link" title="Categorías" id="basic-nav-dropdown">
+                            <LinkContainer to='/category/1'>
+                                <NavDropdown.Item className="nav-link-dropdown">
+                                    Acción
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                            <LinkContainer to='/category/2'>
+                                <NavDropdown.Item className="nav-link-dropdown">
+                                    Aventura
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                            <LinkContainer to='/category/3'>
+                                <NavDropdown.Item className="nav-link-dropdown">
+                                    Conducción
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                        </NavDropdown>
+                        <Nav.Link><Link className="nav-link" to='/faq'>Preguntas Frecuentes</Link></Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+                <CartWidget />
+            </Container>
 
-        </div>
-    </nav>
-
+        </Navbar>
     );
   }
 

@@ -6,6 +6,8 @@ import './ItemDetail.css';
 const ItemDetail = ({item}) => {
     
     return (
+        <>
+        {
         item ? 
         <Container>
             <Row>
@@ -28,7 +30,9 @@ const ItemDetail = ({item}) => {
             </Row>
         </Container>
         : <p>Wait for it...</p>
-  )
+        }
+        </>
+    );
 }
 
 export default ItemDetail
