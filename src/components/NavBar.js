@@ -8,12 +8,14 @@ const NavBar = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand><Link className="navbar-brand" to='/'>Xbox Store Argentina</Link></Navbar.Brand>
+                <Link to='/' className="navbar-brand">Xbox Store Argentina</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link><Link className="nav-link" to='/'>Inicio</Link></Nav.Link>
-                        <Nav.Link><Link className="nav-link" to='/gamepass'>Game Pass</Link></Nav.Link>
+                    <Nav>
+                        <Link to='/gamepass' className="nav-link">Game Pass</Link>
+                        {/*<Link to='/category/1' className="nav-link">Acción</Link>
+                        <Link to='/category/2' className="nav-link">Aventura</Link>
+                        <Link to='/category/3' className="nav-link">Conducción</Link> */}
                         <NavDropdown className="nav-link" title="Categorías" id="basic-nav-dropdown">
                             <LinkContainer to='/category/1'>
                                 <NavDropdown.Item className="nav-link-dropdown">
@@ -31,7 +33,7 @@ const NavBar = () => {
                                 </NavDropdown.Item>
                             </LinkContainer>
                         </NavDropdown>
-                        <Nav.Link><Link className="nav-link" to='/faq'>Preguntas Frecuentes</Link></Nav.Link>
+                        <Link className="nav-link" to='/faq'>Preguntas Frecuentes</Link>
                     </Nav>
                 </Navbar.Collapse>
                 <CartWidget />
