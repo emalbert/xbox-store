@@ -1,10 +1,18 @@
-import React from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Button} from 'react-bootstrap';
+import BtnCheckout from './BtnCheckout';
 import ItemCount from './ItemCount';
 import './ItemDetail.css';
 
 const ItemDetail = ({item}) => {
-    
+
+    const [itemContador, setItemContador] = useState(0);
+
+    const onAdd = (cantidad) => {
+        alert('Has seleccionado ' + cantidad + ' unidades');
+        setItemContador (cantidad);
+    }
+
     return (
         <>
         {
@@ -25,7 +33,9 @@ const ItemDetail = ({item}) => {
                     <p className='item-descripcion'>{item.description}</p>
                     <p className='item-precio'>Precio: ${item.price}</p>
                     <p className='item-stock'>Stock: {item.stock}</p>
-                    <ItemCount className='item-contador' stock={item.stock} initial='1'/>
+                    {
+                        itemContador === 0 ? <ItemCount className='item-contador' stock={item.stock} initial='0' onAdd={onAdd} /> : <BtnCheckout />
+                    }
                 </Col>
             </Row>
         </Container>

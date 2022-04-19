@@ -10,8 +10,6 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({});
     const { idProduct } = useParams();
 
-    console.log(idProduct);
-
     useEffect(() => {
         customFetch(2000, products.find(item => item.id === parseInt(idProduct)))
             .then(result => setProducto(result))
