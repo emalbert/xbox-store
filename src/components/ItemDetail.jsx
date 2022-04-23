@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import BtnCheckout from './BtnCheckout';
 import ItemCount from './ItemCount';
+import { CartContext } from './CartContext';
 import './ItemDetail.css';
 
 const ItemDetail = ({item}) => {
 
     const [itemContador, setItemContador] = useState(0);
+    const producto = useContext(CartContext);
 
     const onAdd = (cantidad) => {
         alert('Has seleccionado ' + cantidad + ' unidades');
         setItemContador (cantidad);
+        producto.addToCart(item, cantidad);
     }
 
     return (

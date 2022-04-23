@@ -13,9 +13,6 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
                         <Link to='/gamepass' className="nav-link">Game Pass</Link>
-                        {/*<Link to='/category/1' className="nav-link">Acción</Link>
-                        <Link to='/category/2' className="nav-link">Aventura</Link>
-                        <Link to='/category/3' className="nav-link">Conducción</Link> */}
                         <NavDropdown className="nav-link" title="Categorías" id="basic-nav-dropdown">
                             <LinkContainer to='/category/1'>
                                 <NavDropdown.Item className="nav-link-dropdown">

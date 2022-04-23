@@ -1,5 +1,10 @@
-.titulo-principal {
+.seccion_titulo-principal {
     margin-top: 40px;
+}
+
+.linea_titulo-principal {
+    margin-bottom: 80px;
+    border: 2px solid grey;
 }
 
 .imagen-principal {
@@ -10,8 +15,20 @@
     margin-bottom: 40px;
 }
 
+.item-img_carrito{
+    height: 250px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(236, 236, 236);
+}
+
 .item-descripcion {
     font-size: 20px;
+}
+
+.item-nombre {
+    font-size: 3rem;
 }
 
 .item-precio {
@@ -28,4 +45,15 @@
 
 .item-contador {
     margin-bottom: 40px;
+}
+
+.seccion_titulo-principal_derecha {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.seccion_titulo-principal_izquierda {
+    display: flex;
+    justify-content: flex-start;
+
 }
