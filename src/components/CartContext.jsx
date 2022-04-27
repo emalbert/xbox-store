@@ -32,8 +32,24 @@ const CartContextProvider = ({children}) => {
         setCartList([]);
     }
 
+
+    const cantidadItems = () => {
+        let cantidad = cartList.map(item => item.qtyItem);
+        let suma = cantidad.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        return suma;
+    }
+
+    const precioItems = () => {
+        let cantidad = cartList.map(item => item.costItem * item.qtyItem);
+        console.log(cantidad);
+        let suma = 0;
+        suma = cantidad.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        console.log('precio:' + suma);
+        return suma;
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeFromCart, clearCart}}>
+        <CartContext.Provider value={{cartList, addToCart, removeFromCart, clearCart, cantidadItems, precioItems}}>
             {children}
         </CartContext.Provider>
     );

@@ -1,9 +1,8 @@
 .seccion_titulo-principal {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
-
-.linea_titulo-principal {
-    margin-bottom: 80px;
+.linea-principal {
     border: 2px solid grey;
 }
 
@@ -32,11 +31,11 @@
 }
 
 .item-precio {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 .item-stock {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .item-precio, .item-stock {
