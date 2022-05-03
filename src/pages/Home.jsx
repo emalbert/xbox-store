@@ -15,7 +15,7 @@ const Home = () => {
         <NavBar />
         <Routes>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path='/category/:idCategory' element={<ItemListContainer />} />
+            <Route path='/category/:category' element={<ItemListContainer />} />
             <Route path='/item/:idProduct' element={<ItemDetailContainer />} />
             <Route path="/GamePass" element={<GamePass />} />
             <Route path="/Faq" element={<Faq />} />
