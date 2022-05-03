@@ -14,17 +14,17 @@ const NavBar = () => {
                     <Nav>
                         <Link to='/gamepass' className="nav-link">Game Pass</Link>
                         <NavDropdown className="nav-link" title="Categorías" id="basic-nav-dropdown">
-                            <LinkContainer to='/category/1'>
+                            <LinkContainer to='/category/accion'>
                                 <NavDropdown.Item className="nav-link-dropdown">
                                     Acción
                                 </NavDropdown.Item>
                             </LinkContainer>
-                            <LinkContainer to='/category/2'>
+                            <LinkContainer to='/category/aventura'>
                                 <NavDropdown.Item className="nav-link-dropdown">
                                     Aventura
                                 </NavDropdown.Item>
                             </LinkContainer>
-                            <LinkContainer to='/category/3'>
+                            <LinkContainer to='/category/conduccion'>
                                 <NavDropdown.Item className="nav-link-dropdown">
                                     Conducción
                                 </NavDropdown.Item>

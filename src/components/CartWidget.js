@@ -7,7 +7,6 @@ import './CartWidget.css';
 const CartWidget = () => {
 
     const valor = useContext(CartContext);
-    console.log('valor: ' + valor.cartList);
 
     return (
         <>

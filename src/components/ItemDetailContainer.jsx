@@ -2,8 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router";
 import ItemDetail from './ItemDetail';
-import customFetch from '../utils/customFetch';
-const {products} = require( './Products');
+import { doc, getDoc } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
 
 const ItemDetailContainer = () => {
   
@@ -11,10 +11,21 @@ const ItemDetailContainer = () => {
     const { idProduct } = useParams();
 
     useEffect(() => {
-        customFetch(2000, products.find(item => item.id === parseInt(idProduct)))
+        const collectFromFirestore = async () => {
+            const docRef = doc(db, "products", idProduct);
+            const docSnap = await getDoc(docRef);
+            
+            if (docSnap.exists()) {
+              return {
+                  id: idProduct,
+                  ...docSnap.data()
+            }};
+            return docSnap;
+         }
+         collectFromFirestore()
             .then(result => setProducto(result))
-            .catch(err => console.log(err))
-    }, [producto]);
+            .catch(err=> console.log(err));
+    }, [idProduct]);         
    
     return (         
             <ItemDetail item={producto} />

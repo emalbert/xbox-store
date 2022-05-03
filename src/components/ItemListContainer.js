@@ -1,29 +1,36 @@
 import './ItemListContainer.css';
 import ItemList from './ItemList';
-import customFetch from '../utils/customFetch';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-const { products } = require('./Products');
+import { useParams } from 'react-router';
+import {collectFromFirestore} from "../utils/firestoreFunctions";
+
+
 
 const ItemListContainer = () => {
     
     const [producto,setProducto] = useState([]);
 
-    let { idCategory } = useParams();
+    let { category } = useParams();
+
+    // useEffect(() => {
+    //     const collectFromFirestore = async () => {
+    //         const querySnapshot = await getDocs(collection(db, "products"));
+    //         const dataFromFirestore = querySnapshot.docs.map((doc) => ({
+    //             id: doc.id,
+    //             ...doc.data()
+    //         }));
+    //         return dataFromFirestore;
+    //     }
+    //     collectFromFirestore()
+    //         .then(result => setProducto(result))
+    //         .catch(err=> console.log(err));
+    // }, [idCategory]);
 
     useEffect(() => {
-       
-        if (idCategory == undefined) {
-            customFetch(2000, products)
-                .then(result => setProducto(result))
-                .catch(error => console.log(error));
-        } else {
-            customFetch(500, products.filter(item => item.categoryId === parseInt(idCategory)))
-                .then(result => setProducto(result))
-                .catch(error => console.log(error));
-        }
-        
-    }, [idCategory]);
+        collectFromFirestore(category)
+            .then(result => setProducto(result))
+            .catch(err=> console.log(err));
+    }, [category]);
 
     return (
         <>
