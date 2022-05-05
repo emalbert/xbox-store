@@ -12,20 +12,6 @@ const ItemListContainer = () => {
 
     let { category } = useParams();
 
-    // useEffect(() => {
-    //     const collectFromFirestore = async () => {
-    //         const querySnapshot = await getDocs(collection(db, "products"));
-    //         const dataFromFirestore = querySnapshot.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data()
-    //         }));
-    //         return dataFromFirestore;
-    //     }
-    //     collectFromFirestore()
-    //         .then(result => setProducto(result))
-    //         .catch(err=> console.log(err));
-    // }, [idCategory]);
-
     useEffect(() => {
         collectFromFirestore(category)
             .then(result => setProducto(result))

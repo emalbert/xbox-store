@@ -29,6 +29,11 @@ const CartContextProvider = ({children}) => {
     }
 
     const clearCart = () => {
+        alert('¿Desea eliminar todos los productos de su carrito?');
+        setCartList([]);
+    }
+
+    const clearCartFromOrder = () => {
         setCartList([]);
     }
 
@@ -49,7 +54,7 @@ const CartContextProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeFromCart, clearCart, cantidadItems, precioItems}}>
+        <CartContext.Provider value={{cartList, addToCart, removeFromCart, clearCart, clearCartFromOrder, cantidadItems, precioItems}}>
             {children}
         </CartContext.Provider>
     );

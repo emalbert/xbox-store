@@ -1,6 +1,5 @@
    
 import { query, where, collection, getDocs, orderBy } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
 import db from '../utils/firebaseConfig';
 
 
