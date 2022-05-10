@@ -91,7 +91,9 @@ const Cart  = () => {
             <Row>
               <Col>
                 <div className='resumen-compra'>
-                  <h2>Total a Pagar: ${producto.precioItems()}</h2>
+                  <h3>Importe: ${producto.precioItems()}</h3>
+                  <h3>Impuestos: ${producto.calculoImpuestos()}</h3>
+                  <h3><strong>Total a pagar: ${producto.precioItems() + producto.calculoImpuestos()}</strong></h3>
                   <Button onClick={crearOrden} className='btn-terminar-compra'>Terminar mi compra</Button>
                 </div>
               </Col>
