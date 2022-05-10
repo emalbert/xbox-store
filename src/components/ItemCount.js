@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import './ItemCount.css';
+import { Button } from 'react-bootstrap';
 
 const ItemCount = (props) => {
 
@@ -29,7 +30,7 @@ const ItemCount = (props) => {
                 <p className="display-contador"> {contador} </p>
                 <button className="btn-contador" onClick={increment}>+</button>
             </div>
-            <button onClick={ () => props.onAdd(contador) }>Add to cart</button>
+            <Button onClick={ () => props.onAdd(contador) } variant="outline-dark">Add to cart</Button>
           
         </>
     );

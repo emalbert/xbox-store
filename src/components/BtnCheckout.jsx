@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const BtnCheckout = () => {
  
   return (
-    <Link to='/cart'><button>CHECKOUT</button></Link>
+    <Link to='/cart'><Button variant="success">CHECKOUT</Button></Link>
   )
 }
 

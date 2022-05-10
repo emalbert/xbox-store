@@ -11,9 +11,14 @@ const ItemDetail = ({item}) => {
     const producto = useContext(CartContext);
 
     const onAdd = (cantidad) => {
+        if (cantidad > 0 ) {
         alert('Has seleccionado ' + cantidad + ' unidades');
         setItemContador (cantidad);
         producto.addToCart(item, cantidad);
+        } else {
+            alert('Debe seleccionar la cantidad requerida del producto');
+        }
+
     }
 
     return (

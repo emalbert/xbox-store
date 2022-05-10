@@ -1,0 +1,9 @@
+.resumen-compra {
+    max-width: 600px;
+    border: 1px solid black;
+    padding: 16px;
+}
+
+.btn-terminar-compra {
+    margin-top: 24px;
+}
