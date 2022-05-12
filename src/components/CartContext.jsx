@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext();
 
@@ -29,7 +30,13 @@ const CartContextProvider = ({children}) => {
     }
 
     const clearCart = () => {
-        alert('¿Desea eliminar todos los productos de su carrito?');
+        const Swal = require('sweetalert2');
+        Swal.fire({
+            title: 'Advertencia',
+            text: '¿Desea eliminar todos los productos del carrito?',
+            icon: 'warning',
+            confirmButtonText: 'Continuar'
+        });
         setCartList([]);
     }
 

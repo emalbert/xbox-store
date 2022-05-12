@@ -4,6 +4,7 @@ import BtnCheckout from './BtnCheckout';
 import ItemCount from './ItemCount';
 import { CartContext } from './CartContext';
 import './ItemDetail.css';
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({item}) => {
 
@@ -11,12 +12,23 @@ const ItemDetail = ({item}) => {
     const producto = useContext(CartContext);
 
     const onAdd = (cantidad) => {
+        const Swal = require('sweetalert2');
         if (cantidad > 0 ) {
-        alert('Has seleccionado ' + cantidad + ' unidades');
+        Swal.fire({
+            title: 'Cantidad de producto',
+            text: 'Has seleccionado ' + cantidad + ' unidades',
+            icon: 'info',
+            confirmButtonText: 'Continuar'
+        });
         setItemContador (cantidad);
         producto.addToCart(item, cantidad);
         } else {
-            alert('Debe seleccionar la cantidad requerida del producto');
+            Swal.fire({
+                title: 'Cantidad de producto',
+                text: 'Has seleccionado ' + cantidad + ' unidades',
+                icon: 'warning',
+                confirmButtonText: 'Continuar'
+            })
         }
 
     }

@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 import { doc, setDoc, collection, serverTimestamp, increment, updateDoc } from "firebase/firestore";
 import db from '../utils/firebaseConfig';
 import './Cart.css';
+import Swal from 'sweetalert2';
 
 
 const Cart  = () => {
   const producto = useContext(CartContext);
 
   const crearOrden = () => {
+
+    const Swal = require('sweetalert2');
+
     const itemsForDB = producto.cartList.map(item => ({
       id: item.idItem,
       title: item.nameItem,
@@ -37,7 +41,13 @@ const Cart  = () => {
     }
   
     createOrderInFirestore()
-      .then(result => alert('Su orden ha sido creada con el siguiente ID: ' + result.id + '\n\n'))
+      //.then(result => alert('Su orden ha sido creada con el siguiente ID: ' + result.id + '\n\n'))
+      .then( result=>Swal.fire({
+        title: 'Felicitaciones',
+        text: 'Su orden ha sido generada con el siguiente ID: ' + result.id,
+        icon: 'info',
+        confirmButtonText: 'Continuar'
+      }))
       .catch(err => console.log(err));
 
     producto.clearCartFromOrder();
